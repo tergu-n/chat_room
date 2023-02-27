@@ -14,6 +14,14 @@ const routes: Array<RouteRecordRaw> = [
     path: '/errPage',
     name: 'ErrPage',
     component: () => import('@/views/404.vue')
+  }, {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/Register.vue')
+  }, {
+    path: '/forget',
+    name: 'Forget',
+    component: () => import('@/views/Forget.vue')
   }
 ]
 
