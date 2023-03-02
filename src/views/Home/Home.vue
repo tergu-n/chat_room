@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    home
+    <HomeHeader></HomeHeader>
   </div>
 </template>
 
 <script setup lang="ts">
-
+import HomeHeader from '@/components/Header/HomeHeader.vue'
 </script>
 
 <style scoped lang="less">

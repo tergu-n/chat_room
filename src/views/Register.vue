@@ -4,10 +4,10 @@
     <LoginHeader left-icon="back" right-icon="close"></LoginHeader>
     <BodyLogo class="body-logo"></BodyLogo>
     <PageTitle title="注册" class="page-title"></PageTitle>
-    <UnderlineInput placeholder="请取个名字" type="text" style="margin-top: 25px;"></UnderlineInput>
-    <UnderlineInput placeholder="请输入邮箱" type="email" style="margin-top: 19px;"></UnderlineInput>
-    <UnderlineInput placeholder="请输入密码" type="password" style="margin-top: 19px;"></UnderlineInput>
-    <button class="register" @click="register">注册</button>
+    <UnderlineInput placeholder="请取个名字" type="text" @isPass="isPass" style="margin-top: 25px;"></UnderlineInput>
+    <UnderlineInput placeholder="请输入邮箱" type="email" @isPass="isPass" style="margin-top: 19px;"></UnderlineInput>
+    <UnderlineInput placeholder="请输入密码" type="password" @isPass="isPass" style="margin-top: 19px;"></UnderlineInput>
+    <button class="register" :class="isActive ? 'active' : ''" :disabled="!isActive" @click="register">注册</button>
   </div>
 </template>
 
@@ -16,10 +16,44 @@ import LoginHeader from '@/components/Header/LoginHeader.vue';
 import BodyLogo from '@/components/Logo/BodyLogo.vue';
 import PageTitle from '@/components/Title/PageTitle.vue';
 import UnderlineInput from '@/components/Input/UnderlineInput.vue';
-import { ref, reactive } from "vue";
+import {IInput} from "@/interfaces/interfaces";
+import {ref, reactive, onMounted, watch} from "vue";
 const register = () => {
   alert('注册')
 }
+// 注册按钮是否为激活状态zx
+let isActive = ref(false);
+let passObj = reactive([
+  {
+    key: 'text',
+    value: false
+  }, {
+    key: 'email',
+    value: false
+  }, {
+    key: 'password',
+    value: false
+  }
+]);
+const isPass = (obj: IInput) => {
+  for (let i = 0; i < passObj.length; i++) {
+    if (passObj[i].key === obj.key) {
+      passObj[i].value = obj.value;
+    }
+  }
+}
+watch(passObj, (newVal) => {
+  let num = 0;
+  for (let i = 0; i < passObj.length; i++) {
+    if (passObj[i].value === true) {
+      num += 1;
+    }
+  }
+  isActive.value = num === 3;
+}, {
+  deep: true,
+  immediate: true
+})
 </script>
 
 <style scoped lang="less">
@@ -51,6 +85,11 @@ const register = () => {
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
+  }
+
+  .active {
+    background-color: #ffe431;
+    color: #272832;
   }
 }
 </style>
