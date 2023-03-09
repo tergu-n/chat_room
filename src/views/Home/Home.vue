@@ -1,14 +1,18 @@
 <template>
   <div class="home">
-    <div class="header" style="width: 100%; height: 44px;"></div>
+    <div class="header" style="width: 100%; height: 44px; text-align: center;">预留部分</div>
     <HomeHeader class="home-header"></HomeHeader>
-    <MsgListItem v-for="item in msgList" :msg="item"></MsgListItem>
+    <div class="body">
+      <MsgListItem v-for="item in msgList" :msg="item"></MsgListItem>
+    </div>
+    <HomeFooter></HomeFooter>
   </div>
 </template>
 
 <script setup lang="ts">
 import HomeHeader from '@/components/Header/HomeHeader.vue';
 import MsgListItem from '@/components/Item/MsgListItem.vue';
+import HomeFooter from '@/components/Footer/HomeFooter.vue';
 import {reactive} from "vue";
 const msgList = reactive([
   {
@@ -44,9 +48,15 @@ const msgList = reactive([
   width: 100%;
   height: 100%;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
 
   .home-header {
     margin-bottom: 7px;
+  }
+
+  .body {
+    flex: 1;
   }
 }
 </style>

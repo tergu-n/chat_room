@@ -65,7 +65,6 @@ const props = defineProps({
     width: 0;
 
     .nick-name {
-      background-color: pink;
       width: 100%;
       height: 25px;
       line-height: 25px;
@@ -84,7 +83,6 @@ const props = defineProps({
     }
 
     .message {
-      background-color: skyblue;
       width: 100%;
       height: 20px;
       line-height: 20px;
