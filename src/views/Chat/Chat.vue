@@ -31,6 +31,7 @@ let user = reactive({
 
   .body {
     flex: 1;
+    overflow: auto;
   }
 }
 </style>
