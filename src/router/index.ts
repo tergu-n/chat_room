@@ -30,6 +30,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/people',
     name: 'People',
     component: () => import('@/views/Person/PersonMain.vue')
+  }, {
+    path: '/request',
+    name: 'Request',
+    component: () => import('@/views/RequestFriend/RequestFriend.vue')
   }
 ]
 
