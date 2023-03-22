@@ -6,7 +6,15 @@
     </div>
     <div class="body">
       <div class="main">
-
+        <div class="header-profile">
+          <div class="image">
+            <img src="https://img2.baidu.com/it/u=2072327970,1761030036&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=493" alt="">
+          </div>
+        </div>
+        <div class="user-name">左左左表妹</div>
+        <div class="my-text">
+          <textarea v-model="text"></textarea>
+        </div>
       </div>
       <div class="btns">
         <button class="cancel">取消</button>
@@ -20,7 +28,7 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import LoginHeader from "@/components/Header/LoginHeader.vue";
-
+let text = ref('');
 
 </script>
 
@@ -34,6 +42,8 @@ import LoginHeader from "@/components/Header/LoginHeader.vue";
 
   .header {
     height: 186px;
+    box-sizing: border-box;
+    padding: 0 12px;
   }
 
   .body {
@@ -41,9 +51,62 @@ import LoginHeader from "@/components/Header/LoginHeader.vue";
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    border-radius: 20px 20px 0 0;
 
     .main {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .header-profile {
+        height: 60px;
+        margin-bottom: 24px;
+        position: relative;
+
+        .image {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          border: 3px solid #ffffff;
+          position: absolute;
+          overflow: hidden;
+          top: -60px;
+          left: 30px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .user-name {
+        height: 37px;
+        margin-bottom: 20px;
+        margin-left: 30px;
+        color: #272832;
+        font-size: 26px;
+      }
+
+      .my-text {
+        flex: 1;
+        background-color: #F3F4F6;
+        margin: 0 28px 47px;
+
+        textarea {
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+          line-height: 22px;
+          border: 0;
+          background-color: inherit;
+          outline: none;
+          color: #272832;
+          font-size: 16px;
+          box-sizing: border-box;
+          padding: 9px 11px;
+        }
+      }
     }
 
     .btns {
