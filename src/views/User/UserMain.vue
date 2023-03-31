@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from "vue";
-import LoginHeader from "@/components/Header/LoginHeader.vue";
+import LoginHeader from "@/components/Header/MainHeader.vue";
 let headProfile = ref('https://img2.baidu.com/it/u=2072327970,1761030036&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=493');
 
 </script>

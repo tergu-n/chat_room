@@ -29,11 +29,15 @@ const routes: Array<RouteRecordRaw> = [
   }, {
     path: '/people',
     name: 'People',
-    component: () => import('@/views/Person/PersonMain.vue')
+    component: () => import('@/views/User/UserMain.vue')
   }, {
     path: '/request',
     name: 'Request',
     component: () => import('@/views/RequestFriend/RequestFriend.vue')
+  }, {
+    path: '/detail',
+    name: 'Detail',
+    component: () => import('@/views/User/UserDetail.vue')
   }
 ]
 

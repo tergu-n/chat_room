@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from "vue";
-import LoginHeader from '@/components/Header/LoginHeader.vue';
+import LoginHeader from '@/components/Header/MainHeader.vue';
 import BodyLogo from '@/components/Logo/BodyLogo.vue';
 import PageTitle from '@/components/Title/PageTitle.vue';
 import UnderlineInput from '@/components/Input/UnderlineInput.vue';

@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from "vue";
-import LoginHeader from "@/components/Header/LoginHeader.vue";
+import LoginHeader from "@/components/Header/MainHeader.vue";
 let text = ref('');
 
 </script>
@@ -105,6 +105,7 @@ let text = ref('');
           font-size: 16px;
           box-sizing: border-box;
           padding: 9px 11px;
+          resize: none;
         }
       }
     }
